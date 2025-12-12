@@ -1,0 +1,140 @@
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .auth-form {
+  background: #1e1e1e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.dark-theme .form-group label {
+  color: #fff;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.dark-theme .form-group input {
+  background: #2d2d2d;
+  border-color: #444;
+  color: #fff;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+}
+
+.dark-theme .form-group input:focus {
+  border-color: #bb86fc;
+}
+
+.auth-error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  border: 1px solid #f5c6cb;
+}
+
+.dark-theme .auth-error {
+  background: #3c1c24;
+  color: #f8d7da;
+  border-color: #4a1c24;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dark-theme .auth-submit-btn {
+  background: #bb86fc;
+  color: #121212;
+}
+
+.auth-submit-btn:hover {
+  background: #0056b3;
+}
+
+.dark-theme .auth-submit-btn:hover {
+  background: #9a67ea;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.auth-logo {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.auth-logo h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.dark-theme .auth-logo h1 {
+  color: #bb86fc;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.auth-link-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.dark-theme .auth-link-btn {
+  color: #bb86fc;
+}
+
+.auth-link-btn:hover {
+  opacity: 0.8;
+}
