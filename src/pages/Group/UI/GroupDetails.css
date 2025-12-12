@@ -1,0 +1,134 @@
+.group-details {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.group-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #007bff;
+}
+
+.dark-theme .group-info {
+  border-bottom-color: #bb86fc;
+}
+
+.group-name {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.dark-theme .group-name {
+  color: #fff;
+}
+
+.group-members-count {
+  color: #666;
+  font-size: 1rem;
+}
+
+.dark-theme .group-members-count {
+  color: #aaa;
+}
+
+.group-actions-panel {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.action-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.members-list {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.dark-theme .members-list {
+  background: #1e1e1e;
+}
+
+.members-list h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.dark-theme .members-list h3 {
+  color: #fff;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.2s;
+}
+
+.dark-theme .member-item {
+  background: #2d2d2d;
+}
+
+.member-item:hover {
+  transform: translateX(4px);
+}
+
+.member-item:last-child {
+  margin-bottom: 0;
+}
+
+.member-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.dark-theme .member-avatar {
+  background: linear-gradient(135deg, #bb86fc, #9a67ea);
+}
+
+.member-info {
+  flex: 1;
+}
+
+.member-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.dark-theme .member-name {
+  color: #fff;
+}
+
+.member-email {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.dark-theme .member-email {
+  color: #aaa;
+}
+
