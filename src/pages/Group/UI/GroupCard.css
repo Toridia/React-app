@@ -1,0 +1,49 @@
+.group-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.dark-theme .group-card {
+  background: #1e1e1e;
+}
+
+.group-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #007bff;
+}
+
+.dark-theme .group-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: #bb86fc;
+}
+
+.group-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.dark-theme .group-card h3 {
+  color: #fff;
+}
+
+.group-members {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.dark-theme .group-members {
+  color: #aaa;
+}
+
+.group-actions {
+  display: flex;
+  justify-content: flex-end;
+}
