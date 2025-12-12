@@ -1,29 +1,99 @@
-import AuthInput from "./UI/AuthInput";
-import AuthButton from "./UI/AuthButton";
-
 /*Функции:
 - ввод логина и пароля
 - "забыли пароль" ссылка на сброс пароля
 - кнопка зарегистрироваться отправляет данные пользователя в базу, чтобы он мог войти с этими данными
 */
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import AuthForm from './UI/AuthForm';
+import { authAPI } from '../../services/api';
+import './AuthPage.css';
 
-function AuthPage() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <Title>LITMO</Title>
-                <a className="App-link"></a>
-            </header>
+const AuthPage = ({ onLogin }) => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-            <div className='Auth'>
-                <AuthInput></AuthInput>
-                <AuthButton></AuthButton>
+  const handleSubmit = async (formData) => {
+    setError('');
+    
+    try {
+      if (isLogin) {
+        // Вход
+        const response = await authAPI.login({
+          username: formData.username,
+          password: formData.password,
+        });
+        
+        if (response.data.token) {
+          onLogin(response.data.token);
+          navigate('/groups');
+        }
+      } else {
+        // Регистрация
+        const response = await authAPI.register({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+        });
+        
+        if (response.data.token) {
+          onLogin(response.data.token);
+          navigate('/groups');
+        }
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || 'Произошла ошибка');
+    }
+  };
 
-            </div>
-        </div>
+  const handleForgotPassword = () => {
+    // Реализация восстановления пароля
+    alert('Функция восстановления пароля в разработке');
+  };
 
-    );
+  return (
+    <div className="auth-container">
+      <div className="auth-logo">
+        <h1>LITMO</h1>
+      </div>
+      
+      <AuthForm
+        isLogin={isLogin}
+        onSubmit={handleSubmit}
+        error={error}
+      />
+      
+      <div className="auth-actions">
+        {isLogin ? (
+          <>
+            <button
+              type="button"
+              className="auth-link-btn"
+              onClick={() => setIsLogin(false)}
+            >
+              регистрация
+            </button>
+            <button
+              type="button"
+              className="auth-link-btn"
+              onClick={handleForgotPassword}
+            >
+              забыли пароль?
+            </button>
+          </>
+        ) : (
+          <button
+            type="button"
+            className="auth-link-btn"
+            onClick={() => setIsLogin(true)}
+          >
+            уже есть аккаунт? войти
+          </button>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default AuthPage;
