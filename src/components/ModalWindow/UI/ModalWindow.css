@@ -1,0 +1,221 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  border: 2px solid #000;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease-out;
+}
+
+.dark-theme .modal-content {
+  background: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dark-theme .modal-header {
+  border-bottom: 1px solid #333;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+}
+
+.dark-theme .modal-close {
+  color: #aaa;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.dark-theme .modal-close:hover {
+  color: #fff;
+}
+
+.modal-form {
+  padding: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.dark-theme .form-group label {
+  color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.dark-theme .form-group input,
+.dark-theme .form-group textarea {
+  background: #2d2d2d;
+  border-color: #444;
+  color: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.dark-theme .form-group input:focus,
+.dark-theme .form-group textarea:focus {
+  border-color: #bb86fc;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.dark-theme .modal-actions {
+  border-top: 1px solid #333;
+}
+
+.modal-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+
+.save-btn {
+  background: #007bff;
+  color: white;
+}
+
+.dark-theme .save-btn {
+  background: #bb86fc;
+  color: #121212;
+}
+
+.save-btn:hover {
+  background: #0056b3;
+}
+
+.dark-theme .save-btn:hover {
+  background: #9a67ea;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.dark-theme .cancel-btn {
+  background: #444;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: #545b62;
+}
+
+.dark-theme .cancel-btn:hover {
+  background: #555;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.dark-theme .delete-btn {
+  background: #cf6679;
+  color: #121212;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+.dark-theme .delete-btn:hover {
+  background: #b25565;
+}
