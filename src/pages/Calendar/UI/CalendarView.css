@@ -1,0 +1,144 @@
+.calendar-view {
+  width: 100%;
+}
+
+/* .calendar-view.month
+   //Стили для месячного вида
+
+.calendar-view.week
+  //Стили для недельного вида */
+
+.calendar-header-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: #ddd;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.dark-theme .calendar-header-row {
+  background: #444;
+}
+
+.day-header {
+  background: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.dark-theme .day-header {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: #ddd;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.dark-theme .calendar-days {
+  background: #444;
+}
+
+.day-cell {
+  background: white;
+  min-height: 120px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  overflow: hidden;
+}
+
+.dark-theme .day-cell {
+  background: #121212;
+  color: #fff;
+}
+
+.day-cell.empty {
+  background: #f8f9fa;
+  cursor: default;
+}
+
+.dark-theme .day-cell.empty {
+  background: #1a1a1a;
+}
+
+.day-cell.today {
+  background: #e3f2fd;
+}
+
+.dark-theme .day-cell.today {
+  background: #0d3c61;
+}
+
+.day-cell:hover:not(.empty) {
+  background: #f0f0f0;
+}
+
+.dark-theme .day-cell:hover:not(.empty) {
+  background: #1a1a1a;
+}
+
+.day-number {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: right;
+  padding: 0.25rem;
+}
+
+.day-event {
+  margin-bottom: 0.25rem;
+  padding: 0.25rem;
+  background: #e3f2fd;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.dark-theme .day-event {
+  background: #0d3c61;
+}
+
+.event-time {
+  font-weight: 500;
+  color: #1976d2;
+  font-size: 0.7rem;
+}
+
+.dark-theme .event-time {
+  color: #90caf9;
+}
+
+.event-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.75rem;
+}
+
+.more-events {
+  text-align: center;
+  color: #666;
+  font-size: 0.8rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.dark-theme .more-events {
+  color: #aaa;
+}
+
+.more-events:hover {
+  color: #007bff;
+}
+
+.dark-theme .more-events:hover {
+  color: #bb86fc;
+}
