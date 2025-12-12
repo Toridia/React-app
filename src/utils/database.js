@@ -1,5 +1,4 @@
 // Примерная структура для подключения к MySQL через PHPMyAdmin
-// В реальном проекте этот код будет на бэкенде (Node.js + Express)
 
 export const databaseConfig = {
   host: 'localhost',
@@ -69,7 +68,7 @@ CREATE TABLE event_notifications (
 );
 */
 
-// Для тестирования можно использовать моки данных
+// Для тестирования
 export const mockData = {
   users: [
     { id: 1, username: 'user1', email: 'user1@example.com' },
