@@ -1,0 +1,75 @@
+.group-page {
+  min-height: 100vh;
+}
+
+.page-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.dark-theme .page-title {
+  color: #fff;
+}
+
+.groups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-group-card {
+  background: #f8f9fa;
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-height: 150px;
+}
+
+.dark-theme .add-group-card {
+  background: #1e1e1e;
+  border-color: #444;
+}
+
+.add-group-card:hover {
+  border-color: #007bff;
+  background: #e3f2fd;
+}
+
+.dark-theme .add-group-card:hover {
+  border-color: #bb86fc;
+  background: #2d2d2d;
+}
+
+.add-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.dark-theme .add-icon {
+  color: #bb86fc;
+}
+
+.add-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #007bff;
+}
+
+.dark-theme .add-text {
+  color: #bb86fc;
+}
+
