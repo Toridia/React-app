@@ -27,7 +27,9 @@ import './pages/Group/GroupPage.css';
 import './pages/Group/UI/GroupCard.css';
 import './pages/Group/UI/GroupDetails.css';
 import './components/Layout/Header.css';
-import './components/ModalWindow/UI/ModalHeader.css';
+import './components/ModalWindow/UI/ModalWindow.css';
+import './services/api.js';
+import './utils/database.js';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
