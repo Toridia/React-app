@@ -1,5 +1,4 @@
 import React from 'react';
-import './EventList.css';
 
 const EventList = ({ events, onEventClick }) => {
   const formatTime = (dateTime) => {
