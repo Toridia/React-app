@@ -1,5 +1,4 @@
 import React from 'react';
-import './GroupCard.css';
 
 const GroupCard = ({ group, onClick }) => {
   return (
