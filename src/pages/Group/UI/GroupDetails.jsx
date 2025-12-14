@@ -1,5 +1,4 @@
 import React from 'react';
-import './GroupDetails.css';
 
 const GroupDetails = ({ group, onAddMembers, onGoToCalendar }) => {
   return (
