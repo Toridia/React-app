@@ -16,7 +16,6 @@ import ModalWindow from '../../components/ModalWindow/ModalWindow';
 import { calendarAPI } from '../../services/api';
 import { mockData } from '../../utils/database';
 import Header from '../../components/Layout/Header';
-import './CalendarPage.css';
 
 const CalendarPage = ({ onLogout, toggleTheme, theme }) => {
   const { groupId } = useParams();
