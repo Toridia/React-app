@@ -1,5 +1,4 @@
 import React from 'react';
-import './CalendarView.css';
 
 const CalendarView = ({ currentDate, events, onDateClick, viewMode }) => {
   const daysInMonth = new Date(
