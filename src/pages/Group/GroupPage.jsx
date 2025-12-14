@@ -23,7 +23,6 @@ import GroupDetails from './UI/GroupDetails';
 import { groupsAPI } from '../../services/api';
 import { mockData } from '../../utils/database';
 import Header from '../../components/Layout/Header';
-import './GroupPage.css';
 
 const GroupPage = ({ onLogout, toggleTheme, theme }) => {
   const { groupId } = useParams();
