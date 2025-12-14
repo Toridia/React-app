@@ -20,7 +20,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import GroupCard from './UI/GroupCard';
 import GroupDetails from './UI/GroupDetails';
-import { groupsAPI } from '../../services/api';
 import { mockData } from '../../utils/database';
 import Header from '../../components/Layout/Header';
 
