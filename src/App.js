@@ -19,6 +19,15 @@ import AuthPage from './pages/Auth/AuthPage';
 import CalendarPage from './pages/Calendar/CalendarPage';
 import GroupPage from './pages/Group/GroupPage';
 import './App.css';
+import './pages/Calendar/UI/CalendarView.css';
+import './pages/Calendar/CalendarPage.css';
+import './pages/Calendar/Events/EventList.css';
+import './pages/Auth/UI/AuthForm.css';
+import './pages/Group/GroupPage.css';
+import './pages/Group/UI/GroupCard.css';
+import './pages/Group/UI/GroupDetails.css';
+import './components/Layout/Header.css';
+import './components/ModalWindow/UI/ModalHeader.css';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
