@@ -30,6 +30,7 @@ import './components/Layout/Header.css';
 import './components/ModalWindow/UI/ModalWindow.css';
 import './services/api.js';
 import './utils/database.js';
+import { apiRequest } from './services/api.js';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
