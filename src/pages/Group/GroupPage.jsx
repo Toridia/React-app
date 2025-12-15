@@ -22,6 +22,7 @@ import GroupCard from './UI/GroupCard';
 import GroupDetails from './UI/GroupDetails';
 import { mockData } from '../../utils/database';
 import Header from '../../components/Layout/Header';
+import { groupsAPI } from '../../services/api';
 
 const GroupPage = ({ onLogout, toggleTheme, theme }) => {
   const { groupId } = useParams();
@@ -42,21 +43,26 @@ const GroupPage = ({ onLogout, toggleTheme, theme }) => {
     }
   }, [groupId]);
 
+
+  // Получить все группы
   const fetchGroups = async () => {
     try {
-      // Для демонстрации используем моки
-      setGroups(mockData.groups);
-      
-      // В реальном проекте:
-      // const response = await groupsAPI.getAll();
-      // setGroups(response.data);
+      const groups = await groupsAPI.getAll();
+      setGroups(groups);
     } catch (error) {
-      console.error('Error fetching groups:', error);
-    } finally {
-      setLoading(false);
+      console.error('Ошибка загрузки групп:', error.message);
     }
   };
 
+  // Создать группу
+  const createGroup = async (groupName) => {
+    try {
+      const newGroup = await groupsAPI.create({ name: groupName });
+      // Обновить список групп
+    } catch (error) {
+      console.error('Ошибка создания группы:', error.message);
+    }
+  };
   const fetchGroupDetails = async (id) => {
     try {
       // Для демонстрации используем моки
@@ -67,7 +73,7 @@ const GroupPage = ({ onLogout, toggleTheme, theme }) => {
           members: mockData.users.slice(0, 4) // Первые 4 пользователя как пример
         });
       }
-      
+
       // В реальном проекте:
       // const response = await groupsAPI.getById(id);
       // setSelectedGroup(response.data);
@@ -106,14 +112,14 @@ const GroupPage = ({ onLogout, toggleTheme, theme }) => {
 
   return (
     <div className="group-page">
-      <Header 
+      <Header
         title={selectedGroup ? selectedGroup.name : "Мои группы"}
         onBack={selectedGroup ? handleBackClick : null}
         onLogout={onLogout}
         toggleTheme={toggleTheme}
         theme={theme}
       />
-      
+
       <div className="page-container">
         {selectedGroup ? (
           <GroupDetails
