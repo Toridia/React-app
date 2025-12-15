@@ -6,8 +6,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthForm from './UI/AuthForm';
-import { authAPI } from '../../services/api';
+import { authAPI } from '../../services/api.js';
 import './AuthPage.css';
+import { authAPI } from '../../services/api';
 
 const AuthPage = ({ onLogin }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -16,7 +17,7 @@ const AuthPage = ({ onLogin }) => {
 
   const handleSubmit = async (formData) => {
     setError('');
-    
+
     try {
       if (isLogin) {
         // Вход
@@ -24,7 +25,7 @@ const AuthPage = ({ onLogin }) => {
           username: formData.username,
           password: formData.password,
         });
-        
+
         if (response.data.token) {
           onLogin(response.data.token);
           navigate('/groups');
@@ -36,7 +37,7 @@ const AuthPage = ({ onLogin }) => {
           email: formData.email,
           password: formData.password,
         });
-        
+
         if (response.data.token) {
           onLogin(response.data.token);
           navigate('/groups');
@@ -44,6 +45,16 @@ const AuthPage = ({ onLogin }) => {
       }
     } catch (err) {
       setError(err.response?.data?.message || 'Произошла ошибка');
+    }
+  };
+
+  const handleLogin = async (credentials) => {
+    try {
+      const data = await authAPI.login(credentials);
+      localStorage.setItem('authToken', data.token);
+      // Редирект после успешного входа
+    } catch (error) {
+      console.error('Ошибка входа:', error.message);
     }
   };
 
@@ -57,13 +68,13 @@ const AuthPage = ({ onLogin }) => {
       <div className="auth-logo">
         <h1>LITMO</h1>
       </div>
-      
+
       <AuthForm
         isLogin={isLogin}
         onSubmit={handleSubmit}
         error={error}
       />
-      
+
       <div className="auth-actions">
         {isLogin ? (
           <>
