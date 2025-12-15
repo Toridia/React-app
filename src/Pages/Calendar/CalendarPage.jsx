@@ -31,22 +31,6 @@ const CalendarPage = ({ onLogout, toggleTheme, theme }) => {
     fetchEvents();
   }, [currentDate, groupId]);
 
-  const fetchEvents = async () => {
-    try {
-      // Для демонстрации используем моки
-      setEvents(mockData.events.filter(e => e.groupId === parseInt(groupId)));
-      
-      // В реальном проекте:
-      // const response = await calendarAPI.getEvents(groupId, {
-      //   month: currentDate.getMonth() + 1,
-      //   year: currentDate.getFullYear()
-      // });
-      // setEvents(response.data);
-    } catch (error) {
-      console.error('Error fetching events:', error);
-    }
-  };
-
   const handleDateClick = (date) => {
     setSelectedDate(date);
     setIsModalOpen(true);
@@ -124,6 +108,29 @@ const CalendarPage = ({ onLogout, toggleTheme, theme }) => {
   const handleBackToGroups = () => {
     navigate(`/group/${groupId}`);
   };
+
+  //Получить события
+const fetchEvents = async (groupId) => {
+  try {
+    const events = await calendarAPI.getEvents(groupId, {
+      month: currentMonth,
+      year: currentYear
+    });
+    setEvents(events);
+  } catch (error) {
+    console.error('Ошибка загрузки событий:', error.message);
+  }
+};
+
+// Создать событие
+const createCalendarEvent = async (groupId, eventData) => {
+  try {
+    const event = await calendarAPI.createEvent(groupId, eventData);
+    // Обновить календарь
+  } catch (error) {
+    console.error('Ошибка создания события:', error.message);
+  }
+};
 
   return (
     <div className="calendar-page">
