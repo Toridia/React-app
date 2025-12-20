@@ -1,28 +1,15 @@
-/*Функции:
-- сначала высвечивается страница регистрации
-- когда пользователь ввел данные его кидает на авторизацию
-- после успешного входа он появляется в пустой страничке с начальной группой с описанием событий
-- при нажатии на перейти к календарю он переходит к нему
-- можно добавлять других юзеров по ссылке
-- навигация по кнопкам внизу экрана
-- настройки нужны приложения
-*/
-/*Функции:
-- ввод логина и пароля
-- "забыли пароль" ссылка на сброс пароля
-- кнопка зарегистрироваться отправляет данные пользователя в базу, чтобы он мог войти с этими данными
-*/
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AuthPage from './pages/Auth/AuthPage';
 import CalendarPage from './pages/Calendar/CalendarPage';
 import GroupPage from './pages/Group/GroupPage';
+
 import './App.css';
 import './pages/Calendar/UI/CalendarView.css';
 import './pages/Calendar/CalendarPage.css';
 import './pages/Calendar/Events/EventList.css';
 import './pages/Auth/UI/AuthForm.css';
+import './pages/Auth/AuthPage.jsx.css'
 import './pages/Group/GroupPage.css';
 import './pages/Group/UI/GroupCard.css';
 import './pages/Group/UI/GroupDetails.css';
