@@ -1,22 +1,5 @@
 
-/*
-Страница мои группы после нажатия на группу
-
-- Стрелочка отправляет назад
-
-- Название группы можно менять
-- Число участников меняется от количества userов  
-
-- Кнопка "Добавить участников"
-- Кнопка "Перейти к календарю"
- 
-- Имя userа можно менять при нажатии на него
-- Цвет вместо аватарки с буквой
-- Картинка группы можно менять
-
-- кнопки навигации добавить
-*/
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import GroupCard from './UI/GroupCard';
 import GroupDetails from './UI/GroupDetails';
