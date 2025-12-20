@@ -99,14 +99,14 @@ const del = (endpoint) => {
   });
 };
 
-// ========== API ДЛЯ АУТЕНТИФИКАЦИИ ==========
+// ========== API ДЛЯ АУТЕНТИФИКАЦИИ =========
 export const authAPI = {
   login: (credentials) => post('/auth/login', credentials),
   register: (userData) => post('/auth/register', userData),
   logout: () => post('/auth/logout'),
 };
 
-// ========== API ДЛЯ ГРУПП ==========
+// ========== API ДЛЯ ГРУПП =========
 export const groupsAPI = {
   getAll: () => get('/groups'),
   getById: (id) => get(`/groups/${id}`),
