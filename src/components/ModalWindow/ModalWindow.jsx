@@ -4,7 +4,7 @@
 - изменить событие можно в нем (время, участников, событие)
 */
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './ModalWindow.css';
 
 const ModalWindow = ({ isOpen, onClose, onSave, onDelete, event, date }) => {
