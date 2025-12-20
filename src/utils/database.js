@@ -1,4 +1,4 @@
-// Примерная структура для подключения к MySQL через PHPMyAdmin
+// Примерная структура для подключения к MySQL через PHPMyAdmin;
 
 export const databaseConfig = {
   host: 'localhost',
