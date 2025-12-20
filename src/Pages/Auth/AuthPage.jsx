@@ -1,8 +1,4 @@
-/*Функции:
-- ввод логина и пароля
-- "забыли пароль" ссылка на сброс пароля
-- кнопка зарегистрироваться отправляет данные пользователя в базу, чтобы он мог войти с этими данными
-*/
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthForm from './UI/AuthForm';
