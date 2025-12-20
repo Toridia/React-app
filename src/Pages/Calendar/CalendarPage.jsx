@@ -1,14 +1,5 @@
 
-/*функции:
-- календарь при движении вверх по нему уменьшается до одной строчки
-- добавление событий
-- при нажатии на месяц и год можно выбрать их
-- при нажатии на событие его можно изменять и удалять
-- при выборе дня показывается события на этот день
-- смах влево и вправо это переход по месяцам
-*/
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import CalendarView from './UI/CalendarView';
 import EventList from './Events/EventList';
