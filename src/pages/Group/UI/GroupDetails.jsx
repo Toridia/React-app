@@ -1,4 +1,3 @@
-import React from 'react';
 
 const GroupDetails = ({ group, onAddMembers, onGoToCalendar }) => {
   return (
